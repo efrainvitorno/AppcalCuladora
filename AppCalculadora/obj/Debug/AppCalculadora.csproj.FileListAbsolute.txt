@@ -1,0 +1,7 @@
+C:\Users\User\Desktop\progrmacion\Algoritmos y Estructuras\AppCalculadora\AppCalculadora\obj\Debug\AppCalculadora.csproj.AssemblyReference.cache
+C:\Users\User\Desktop\progrmacion\Algoritmos y Estructuras\AppCalculadora\AppCalculadora\obj\Debug\AppCalculadora.csproj.CoreCompileInputs.cache
+C:\Users\User\Desktop\progrmacion\Algoritmos y Estructuras\AppCalculadora\AppCalculadora\bin\Debug\AppCalculadora.exe.config
+C:\Users\User\Desktop\progrmacion\Algoritmos y Estructuras\AppCalculadora\AppCalculadora\bin\Debug\AppCalculadora.exe
+C:\Users\User\Desktop\progrmacion\Algoritmos y Estructuras\AppCalculadora\AppCalculadora\bin\Debug\AppCalculadora.pdb
+C:\Users\User\Desktop\progrmacion\Algoritmos y Estructuras\AppCalculadora\AppCalculadora\obj\Debug\AppCalculadora.exe
+C:\Users\User\Desktop\progrmacion\Algoritmos y Estructuras\AppCalculadora\AppCalculadora\obj\Debug\AppCalculadora.pdb
