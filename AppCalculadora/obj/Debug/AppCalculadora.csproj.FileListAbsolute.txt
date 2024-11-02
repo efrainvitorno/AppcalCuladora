@@ -12,3 +12,10 @@ C:\Users\lovito99\Source\Repos\AppcalCuladora\AppCalculadora\obj\Debug\AppCalcul
 C:\Users\lovito99\Source\Repos\AppcalCuladora\AppCalculadora\obj\Debug\AppCalculadora.csproj.CoreCompileInputs.cache
 C:\Users\lovito99\Source\Repos\AppcalCuladora\AppCalculadora\obj\Debug\AppCalculadora.exe
 C:\Users\lovito99\Source\Repos\AppcalCuladora\AppCalculadora\obj\Debug\AppCalculadora.pdb
+C:\Users\lovito99\Documents\GitHub\AppcalCuladora\AppCalculadora\bin\Debug\AppCalculadora.exe.config
+C:\Users\lovito99\Documents\GitHub\AppcalCuladora\AppCalculadora\bin\Debug\AppCalculadora.exe
+C:\Users\lovito99\Documents\GitHub\AppcalCuladora\AppCalculadora\bin\Debug\AppCalculadora.pdb
+C:\Users\lovito99\Documents\GitHub\AppcalCuladora\AppCalculadora\obj\Debug\AppCalculadora.csproj.AssemblyReference.cache
+C:\Users\lovito99\Documents\GitHub\AppcalCuladora\AppCalculadora\obj\Debug\AppCalculadora.csproj.CoreCompileInputs.cache
+C:\Users\lovito99\Documents\GitHub\AppcalCuladora\AppCalculadora\obj\Debug\AppCalculadora.exe
+C:\Users\lovito99\Documents\GitHub\AppcalCuladora\AppCalculadora\obj\Debug\AppCalculadora.pdb

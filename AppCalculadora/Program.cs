@@ -5,9 +5,11 @@ class Program
 {
     static void Main()
     {
+        Console.WriteLine("APLICACIÓN CALCULADORA\n");
+
         while (true)
         {
-            Console.Write("Ingrese una expresión en notación infija:(o escriba 'salir' para terminar): ");
+            Console.Write("Ingrese una expresión en notación infija : ");
             string expresion = Console.ReadLine();
 
             // Verifica si el usuario desea salir

@@ -1,0 +1,75 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\lovito99\\Documents\\GitHub\\AppcalCuladora\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{03C0C092-44CF-40D1-B3B1-8AF4C5248142}|AppCalculadora\\AppCalculadora.csproj|c:\\users\\lovito99\\documents\\github\\appcalculadora\\appcalculadora\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{03C0C092-44CF-40D1-B3B1-8AF4C5248142}|AppCalculadora\\AppCalculadora.csproj|solutionrelative:appcalculadora\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{03C0C092-44CF-40D1-B3B1-8AF4C5248142}|AppCalculadora\\AppCalculadora.csproj|c:\\users\\lovito99\\documents\\github\\appcalculadora\\appcalculadora\\ccalculadora.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{03C0C092-44CF-40D1-B3B1-8AF4C5248142}|AppCalculadora\\AppCalculadora.csproj|solutionrelative:appcalculadora\\ccalculadora.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{03C0C092-44CF-40D1-B3B1-8AF4C5248142}|AppCalculadora\\AppCalculadora.csproj|c:\\users\\lovito99\\documents\\github\\appcalculadora\\appcalculadora\\cpila.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{03C0C092-44CF-40D1-B3B1-8AF4C5248142}|AppCalculadora\\AppCalculadora.csproj|solutionrelative:appcalculadora\\cpila.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 3,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "CCalculadora.cs",
+              "DocumentMoniker": "C:\\Users\\lovito99\\Documents\\GitHub\\AppcalCuladora\\AppCalculadora\\CCalculadora.cs",
+              "RelativeDocumentMoniker": "AppCalculadora\\CCalculadora.cs",
+              "ToolTip": "C:\\Users\\lovito99\\Documents\\GitHub\\AppcalCuladora\\AppCalculadora\\CCalculadora.cs",
+              "RelativeToolTip": "AppCalculadora\\CCalculadora.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-02T04:13:17.164Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "CPila.cs",
+              "DocumentMoniker": "C:\\Users\\lovito99\\Documents\\GitHub\\AppcalCuladora\\AppCalculadora\\CPila.cs",
+              "RelativeDocumentMoniker": "AppCalculadora\\CPila.cs",
+              "ToolTip": "C:\\Users\\lovito99\\Documents\\GitHub\\AppcalCuladora\\AppCalculadora\\CPila.cs",
+              "RelativeToolTip": "AppCalculadora\\CPila.cs",
+              "ViewState": "AgIAAFYAAAAAAAAAAAAcwGAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-02T04:08:15.109Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\lovito99\\Documents\\GitHub\\AppcalCuladora\\AppCalculadora\\Program.cs",
+              "RelativeDocumentMoniker": "AppCalculadora\\Program.cs",
+              "ToolTip": "C:\\Users\\lovito99\\Documents\\GitHub\\AppcalCuladora\\AppCalculadora\\Program.cs",
+              "RelativeToolTip": "AppCalculadora\\Program.cs",
+              "ViewState": "AgIAACAAAAAAAAAAAAAIwAsAAABEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-02T04:12:25.778Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
