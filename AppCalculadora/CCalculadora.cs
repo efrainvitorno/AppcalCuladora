@@ -1,173 +1,136 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Text.RegularExpressions;
 
-class CPila<T>
+namespace AppCalculadora
 {
-    private Stack<T> stack = new Stack<T>();
-
-    public void Apilar(T elemento)
+    internal class CCalculadora
     {
-        stack.Push(elemento);
-    }
+        private string aExpresion; // Almacena la expresión infija
 
-    public T Desapilar()
-    {
-        return stack.Pop();
-    }
-
-    public T Cima()
-    {
-        return stack.Peek();
-    }
-
-    public bool EsVacia()
-    {
-        return stack.Count == 0;
-    }
-}
-
-class CConvertidorAPosFijo
-{
-    public string Convertir(string expresion)
-    {
-        CPila<char> pila = new CPila<char>();
-        string expresionPosFijo = "";
-        foreach (char token in expresion)
+        public CCalculadora(string expresion)
         {
-            if (char.IsDigit(token) || char.IsLetter(token))
+            aExpresion = expresion;
+        }
+
+        // Método para verificar si la expresión contiene solo números y operadores
+        public bool ContieneSoloNumeros()
+        {
+            return !Regex.IsMatch(aExpresion, @"[a-zA-Z]");
+        }
+
+        // Convierte la expresión infija a notación posfija
+        public string ConvertirAPosFijo()
+        {
+            CPila pila = new CPila();
+            string expresionPosfijo = "";
+
+            // **Retacear**: eliminamos espacios en blanco de la expresión para procesar cada carácter como un token independiente
+            foreach (char token in aExpresion.Replace(" ", ""))
             {
-                expresionPosFijo += token + " ";
-            }
-            else if (token == '(')
-            {
-                pila.Apilar(token);
-            }
-            else if (token == ')')
-            {
-                while (!pila.EsVacia() && pila.Cima() != '(')
+                if (char.IsDigit(token) || char.IsLetter(token))
                 {
-                    expresionPosFijo += pila.Desapilar() + " ";
+                    expresionPosfijo += token + " ";
                 }
-                pila.Desapilar(); // Quitar '(' de la pila
-            }
-            else if (EsOperador(token))
-            {
-                while (!pila.EsVacia() && Precedencia(token) <= Precedencia(pila.Cima()))
+                else if (token == '(')
                 {
-                    expresionPosFijo += pila.Desapilar() + " ";
+                    pila.Apilar(token);
                 }
-                pila.Apilar(token);
+                else if (token == ')')
+                {
+                    while (!pila.EsVacia() && (char)pila.Cima() != '(')
+                    {
+                        expresionPosfijo += pila.Cima() + " ";
+                        pila.Desapilar();
+                    }
+                    pila.Desapilar(); // Quitar '('
+                }
+                else if (EsOperador(token))
+                {
+                    while (!pila.EsVacia() && Precedencia(token) <= Precedencia((char)pila.Cima()))
+                    {
+                        expresionPosfijo += pila.Cima() + " ";
+                        pila.Desapilar();
+                    }
+                    pila.Apilar(token);
+                }
             }
-        }
 
-        while (!pila.EsVacia())
-        {
-            expresionPosFijo += pila.Desapilar() + " ";
-        }
-
-        return expresionPosFijo.Trim();
-    }
-
-    private bool EsOperador(char token)
-    {
-        return token == '+' || token == '-' || token == '*' || token == '/' || token == '^';
-    }
-
-    private int Precedencia(char operador)
-    {
-        if (operador == '+' || operador == '-') return 1;
-        if (operador == '*' || operador == '/') return 2;
-        if (operador == '^') return 3;
-        return 0;
-    }
-}
-
-class CEvaluadorPosFijo
-{
-    public float Evaluar(string expresionPosFijo)
-    {
-        CPila<float> pila = new CPila<float>();
-        string[] tokens = expresionPosFijo.Split(' ');
-
-        foreach (string token in tokens)
-        {
-            if (float.TryParse(token, out float num))
+            // Extraer todos los operadores restantes de la pila
+            while (!pila.EsVacia())
             {
-                pila.Apilar(num);
+                expresionPosfijo += pila.Cima() + " ";
+                pila.Desapilar();
             }
-            else if (EsOperador(token))
+
+            return expresionPosfijo.Trim();
+        }
+
+        // Evalúa la expresión infija en formato posfijo
+        public float Evaluar()
+        {
+            // Convierte la expresión a posfijo y luego la evalúa
+            string expresionPosfijo = ConvertirAPosFijo();
+            CPila pila = new CPila();
+            string[] tokens = expresionPosfijo.Split(' '); // **Tokenizar**: dividir en tokens
+
+            foreach (string token in tokens)
             {
-                float operandoDer = pila.Desapilar();
-                float operandoIzq = pila.Desapilar();
-                float resultado = EjecutarOperacion(token, operandoIzq, operandoDer);
-                pila.Apilar(resultado);
+                if (float.TryParse(token, out float num))
+                {
+                    pila.Apilar(num);
+                }
+                else if (EsOperador(token))
+                {
+                    // **Evaluar en posfijo**: procesar los operadores en el orden en que aparecen
+                    float operandoDer = (float)pila.Cima();
+                    pila.Desapilar();
+                    float operandoIzq = (float)pila.Cima();
+                    pila.Desapilar();
+                    float resultado = EjecutarOperacion(token, operandoIzq, operandoDer);
+                    pila.Apilar(resultado);
+                }
+            }
+
+            return (float)pila.Cima();
+        }
+
+        // Método para verificar si un carácter es un operador
+        private bool EsOperador(string token)
+        {
+            return token == "+" || token == "-" || token == "*" || token == "/" || token == "^";
+        }
+
+        private bool EsOperador(char token)
+        {
+            return token == '+' || token == '-' || token == '*' || token == '/' || token == '^';
+        }
+
+        // Método que asigna la precedencia a cada operador
+        private int Precedencia(char operador)
+        {
+            switch (operador)
+            {
+                case '+':
+                case '-': return 1;
+                case '*':
+                case '/': return 2;
+                case '^': return 3;
+                default: return 0;
             }
         }
 
-        return pila.Desapilar();
-    }
-
-    private bool EsOperador(string token)
-    {
-        return token == "+" || token == "-" || token == "*" || token == "/" || token == "^";
-    }
-
-    private float EjecutarOperacion(string operador, float operandoIzq, float operandoDer)
-    {
-        switch (operador)
+        // Ejecuta la operación correspondiente entre dos operandos
+        private float EjecutarOperacion(string operador, float izq, float der)
         {
-            case "+": return operandoIzq + operandoDer;
-            case "-": return operandoIzq - operandoDer;
-            case "*": return operandoIzq * operandoDer;
-            case "/": return operandoIzq / operandoDer;
-            case "^": return (float)Math.Pow(operandoIzq, operandoDer);
-            default: throw new ArgumentException("Operador desconocido: " + operador);
+            switch (operador)
+            {
+                case "+": return izq + der;
+                case "-": return izq - der;
+                case "*": return izq * der;
+                case "/": return izq / der;
+                case "^": return (float)Math.Pow(izq, der);
+                default: throw new ArgumentException("Operador desconocido");
+            }
         }
-    }
-}
-
-public class CCalculadora
-{
-    private string aExpresion;
-
-    public CCalculadora() { aExpresion = ""; }
-
-    public CCalculadora(string expresion) { aExpresion = expresion; }
-
-    public void AsignarExpresion(string expresion)
-    {
-        aExpresion = expresion;
-    }
-
-    public string ObtenerExpresion()
-    {
-        return aExpresion;
-    }
-
-    public string ConvertirAPosFijo()
-    {
-        CConvertidorAPosFijo convertidor = new CConvertidorAPosFijo();
-        return convertidor.Convertir(aExpresion);
-    }
-
-    public bool ContieneSoloNumeros()
-    {
-        // Verifica si la expresión contiene únicamente dígitos y operadores, sin letras
-        return !Regex.IsMatch(aExpresion, @"[a-zA-Z]");
-    }
-
-    public float Evaluar()
-    {
-        if (!ContieneSoloNumeros())
-        {
-            throw new InvalidOperationException("La expresión contiene variables no numéricas.");
-        }
-
-        CConvertidorAPosFijo convertidor = new CConvertidorAPosFijo();
-        string expresionPosFijo = convertidor.Convertir(aExpresion);
-
-        CEvaluadorPosFijo evaluador = new CEvaluadorPosFijo();
-        return evaluador.Evaluar(expresionPosFijo);
     }
 }

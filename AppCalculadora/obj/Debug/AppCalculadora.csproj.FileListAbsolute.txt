@@ -5,3 +5,10 @@ C:\Users\User\Desktop\progrmacion\Algoritmos y Estructuras\AppCalculadora\AppCal
 C:\Users\User\Desktop\progrmacion\Algoritmos y Estructuras\AppCalculadora\AppCalculadora\bin\Debug\AppCalculadora.pdb
 C:\Users\User\Desktop\progrmacion\Algoritmos y Estructuras\AppCalculadora\AppCalculadora\obj\Debug\AppCalculadora.exe
 C:\Users\User\Desktop\progrmacion\Algoritmos y Estructuras\AppCalculadora\AppCalculadora\obj\Debug\AppCalculadora.pdb
+C:\Users\lovito99\Source\Repos\AppcalCuladora\AppCalculadora\bin\Debug\AppCalculadora.exe.config
+C:\Users\lovito99\Source\Repos\AppcalCuladora\AppCalculadora\bin\Debug\AppCalculadora.exe
+C:\Users\lovito99\Source\Repos\AppcalCuladora\AppCalculadora\bin\Debug\AppCalculadora.pdb
+C:\Users\lovito99\Source\Repos\AppcalCuladora\AppCalculadora\obj\Debug\AppCalculadora.csproj.AssemblyReference.cache
+C:\Users\lovito99\Source\Repos\AppcalCuladora\AppCalculadora\obj\Debug\AppCalculadora.csproj.CoreCompileInputs.cache
+C:\Users\lovito99\Source\Repos\AppcalCuladora\AppCalculadora\obj\Debug\AppCalculadora.exe
+C:\Users\lovito99\Source\Repos\AppcalCuladora\AppCalculadora\obj\Debug\AppCalculadora.pdb

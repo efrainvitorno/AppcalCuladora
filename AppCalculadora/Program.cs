@@ -1,37 +1,48 @@
-﻿using System;
+﻿using AppCalculadora;
+using System;
 
 class Program
 {
     static void Main()
     {
-        Console.Write("Ingrese una expresión en notación infija: ");
-        string expresion = Console.ReadLine();
-
-        CCalculadora calculadora = new CCalculadora(expresion);
-
-        try
+        while (true)
         {
-            // Convertir la expresión a notación postfija
-            string notacionPosfija = calculadora.ConvertirAPosFijo();
-            Console.WriteLine("Notación postfija: " + notacionPosfija);
+            Console.Write("Ingrese una expresión en notación infija:(o escriba 'salir' para terminar): ");
+            string expresion = Console.ReadLine();
 
-            // Intentar evaluar la expresión solo si contiene solo números
-            if (calculadora.ContieneSoloNumeros())
+            // Verifica si el usuario desea salir
+            if (expresion.ToLower() == "salir")
             {
-                float resultado = calculadora.Evaluar();
-                Console.WriteLine("El resultado es: " + (int)resultado); // Convertir el resultado a entero
+                Console.WriteLine("Finalizando el programa...");
+                break;
             }
-            else
-            {
-                Console.WriteLine("No es posible calcular el resultado ya que la expresión contiene variables no numéricas.");
-            }
-        }
-        catch (Exception e)
-        {
-            Console.WriteLine("Error en la evaluación: " + e.Message);
-        }
 
-        Console.WriteLine("Presione cualquier tecla para salir...");
-        Console.ReadKey();
+            // Instancia de la calculadora con la expresión ingresada
+            CCalculadora calculadora = new CCalculadora(expresion);
+
+            try
+            {
+                // Convertir la expresión a notación posfija
+                string notacionPosfija = calculadora.ConvertirAPosFijo();
+                Console.WriteLine("Notación posfija: " + notacionPosfija);
+
+                // Evaluar solo si la expresión contiene solo números
+                if (calculadora.ContieneSoloNumeros())
+                {
+                    float resultado = calculadora.Evaluar();
+                    Console.WriteLine("El resultado es: " + resultado);
+                }
+                else
+                {
+                    Console.WriteLine("No es posible calcular el resultado ya que la expresión contiene variables no numéricas.");
+                }
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("Error en la evaluación: " + e.Message);
+            }
+
+            Console.WriteLine(); // Línea en blanco para separar las operaciones
+        }
     }
 }
